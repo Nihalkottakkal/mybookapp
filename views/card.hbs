@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="/stylesheets/card.css">
+</head>
+
+<body>
+    <div class="content">
+
+        <div class="navbar">
+            <a class="a" href="/adminhome">MyBook &nbsp;App</a>
+            <a class="a2" href="/data"> add books </a>
+            <a class="a3" href="/list"> update data </a>
+        </div>
+
+        <h1>
+            card
+        </h1>
+
+        {{#each list}}
+
+        <div class="card">
+            <h3>{{this.name}}</h3>
+            <p>by {{this.author}}</p>
+            <p>Category: {{this.category}}</p>
+            <p>Published Year: {{this.year}}</p>
+            <p>Price: {{this.price}}</p>
+            <p>Stock: {{this.stock}} nos</p>
+            <a href="/favourites/{{this._id}}">
+                <button>
+                    Add to Favourites
+                </button>
+            </a>
+        </div>
+
+        {{/each}}
+
+
+
+
+
+
+    </div>
+</body>
+
+
+</html>

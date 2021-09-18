@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<title>
+    signup
+</title>
+
+<head>
+    <link rel="stylesheet" href="/stylesheets/signup.css">
+</head>
+
+<body>
+
+    <h1>
+        signup
+    </h1>
+    <div class="div1">
+        <div class="div2">
+            <form autocomplete="off" method="POST" action="/signup" onsubmit="return validation()">
+                <input required class="username" type="text" placeholder="username" name="username" id="name"><br><br>
+                <input required class="password" type="email" placeholder="email" name="email" id="email"><br><br>
+                <input required class="username" type="number" placeholder="phone" name="phone" id="phone"><br><br>
+                <input required class="password" type="password" placeholder="password" name="password" id="password"><br><br>
+                <input required class="password" type="password" placeholder="confirm password" name="confirm" id="confirm"><br><br>
+                <a>
+                    <button>
+                        SIGN UP
+                    </button>
+                </a>
+                <br>
+                <br>
+            </form>
+        </div>
+    </div>
+
+
+    <script>
+        function validation() {
+
+
+            var phone = document.getElementById('phone')
+            var password = document.getElementById('password')
+            var confirm = document.getElementById('confirm')
+
+            if (phone.value.length < 10) {
+              
+              alert('phone number must be 10 number')
+              return false
+            }
+            else if(password.value.length < 8) {
+              alert('password must contain atleast 8 characters')
+              return false
+            }
+            else if(password.value!==confirm.value){
+                alert('password incorrect')
+                return false
+            }
+
+
+    
+            
+
+        }
+    </script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <head>
+            <link rel="stylesheet" href="/stylesheets/update.css">
+        </head>
+        <div class="navbar">
+         
+            <a class="a" href="/adminhome">MyBook &nbsp;App</a>
+            <a class="a2" href="/data"> add books </a>
+            <a class="a3" href="/list"> update data </a>
+        </div>
+        <div class="div2">
+        <h1>
+            Update
+        </h1>
+        <form method="POST" action="/update/{{list._id}}"> 
+            <input hidden type="text" value="{{list._id}}"  name="id"><br><br>
+            <label for="name">Book</label>
+            <input type="text" value="{{list.name}}" id="name" name="name"><br><br>
+            <label for="author">Author</label>
+            <input type="text" value="{{list.author}}" id="author" name="author"><br><br>
+            <label for="year">Year</label>
+            <input type="text" value="{{list.year}}" id="year" name="year"><br><br>
+            <label for="category">Category</label>
+            <input type="text" value="{{list.category}}" id="category" name="category"><br><br>
+            <label for="price">Price</label>
+            <input type="text" value="{{list.price}}" id="price" name="price"><br><br>
+            <label for="stock">Stock</label>
+            <input type="text" value="{{list.stock}}" id="stock" name="stock"><br><br><br><br>
+            <input hidden name="time" id="time">
+            <button>update</button>
+        </form>
+        </div>
+
+        <br><br>
+
+        <script>
+            document.getElementById('time').value= new Date().getTime()
+        </script>
+
+    </body>
+</html>

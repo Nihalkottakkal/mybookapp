@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="/stylesheets/list.css">
+    </head>
+    <body>
+        <div class="navbar">
+         
+            <a class="a" href="/adminhome">MyBook &nbsp;App</a>
+            <a class="a2" href="/data"> add books </a>
+            <a class="a3" href="/list"> update data </a>
+        </div>
+        
+        
+        <h1>Data</h1>
+        <div class="table">
+        <table>
+            <tr>
+                <th>Book</th>
+                <th>Author</th>
+                <th>Year</th>
+                <th>Category</th>
+                <th>Price</th>
+                <th>Stock</th>
+                <th>Update</th>
+                <th>Delete</th>
+            </tr>
+            {{#each list}}
+            <tr>
+                <td>{{this.name}}</td>
+                <td>{{this.author}}</td>
+                <td>{{this.year}}</td>
+                <td>{{this.category}}</td>
+                <td>{{this.price}}</td>
+                <td>{{this.stock}}</td>
+                <td>
+                    <a href="/updated/{{this._id}}">
+                        <button class="updatebutton">Update</button>
+                    </a>
+                </td>
+                <td>
+                    <a href="/deleted/{{this._id}}">
+                        <button class="deletebutton" onclick="return alert()">Delete</button>
+                    </a>
+                </td>
+            </tr>
+           
+            {{/each}}
+
+            
+        </table>
+        </div>
+
+
+        <script>
+            function alert(){
+                var sure = confirm('confirm delete?')
+                if(sure)
+                {
+                    return true
+                }
+                else
+                {
+                    return false
+                    
+                }
+            }
+        </script>
+    </body>
+</html>

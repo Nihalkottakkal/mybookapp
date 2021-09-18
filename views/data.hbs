@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="/stylesheets/data.css">
+</head>
+
+<body>
+
+
+
+    <div class="navbar">
+
+        <a class="a" href="/adminhome">MyBook &nbsp;App</a>
+        <a class="a2" href="/data"> add books </a>
+        <a class="a3" href="/list"> update data </a>
+    </div>
+
+
+    <div class="div2">
+
+        <h1>Add Books</h1>
+
+        <form method="POST" action="/data" onsubmit="return validation()">
+            <input required type="text" placeholder="Book" name="name" id="name"><br><br>
+            <input required type="text" placeholder="Author" name="author" id="author"><br><br>
+            <input required type="number" placeholder="Published year" name="year" id="year"><br><br>
+            <input required type="text" placeholder="Genre" name="category" id="category"><br><br>
+            <input required type="text" placeholder="Price" value="Rs." name="price" id="price"><br><br>
+            <input required type="number" placeholder="Stock" name="stock" id="stock"><br><br><br><br>
+            <input hidden name="time" id="time">
+
+            </input>
+            <button>add</button>
+        </form>
+    </div>
+</body>
+
+<script>
+
+
+    var timenow = new Date()
+    document.getElementById('time').value = timenow.getTime()
+
+
+
+    function validation(e) {
+
+
+        var year = document.getElementById('year')
+        var currentyear = new Date().getFullYear()
+        var stock = document.getElementById('stock').value
+
+        if (year.value > currentyear || stock < 0) {
+            alert('invalid year or stock')
+            return false
+
+        }
+        else {
+            alert('data added')
+            return true
+
+        }
+
+
+    }
+
+
+
+</script>
+
+
+</html>
